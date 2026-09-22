@@ -1,6 +1,6 @@
-package com.andresfelipeh1995.proyweb1.repository;
+package entorno.com.cinema.repository;
 
-import com.andresfelipeh1995.proyweb1.entity.Pelicula;
+import entorno.com.cinema.entity.Pelicula;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

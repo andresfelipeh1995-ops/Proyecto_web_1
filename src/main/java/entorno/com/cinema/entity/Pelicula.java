@@ -1,4 +1,4 @@
-package com.andresfelipeh1995.proyweb1.entity;
+package entorno.com.cinema.entity;
 
 import jakarta.persistence.*;
 

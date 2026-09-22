@@ -1,7 +1,7 @@
-package com.andresfelipeh1995.proyweb1.service;
+package entorno.com.cinema.service;
 
-import com.andresfelipeh1995.proyweb1.entity.Pelicula;
-import com.andresfelipeh1995.proyweb1.repository.PeliculaRepository;
+import entorno.com.cinema.entity.Pelicula;
+import entorno.com.cinema.repository.PeliculaRepository;
 
 //import jakarta.transaction.Transactional;
 import org.springframework.transaction.annotation.Transactional;

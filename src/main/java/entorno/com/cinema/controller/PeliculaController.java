@@ -1,7 +1,7 @@
-package com.andresfelipeh1995.proyweb1.controller;
+package entorno.com.cinema.controller;
 
-import com.andresfelipeh1995.proyweb1.entity.Pelicula;
-import com.andresfelipeh1995.proyweb1.service.PeliculaServicio;
+import entorno.com.cinema.entity.Pelicula;
+import entorno.com.cinema.service.PeliculaServicio;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
