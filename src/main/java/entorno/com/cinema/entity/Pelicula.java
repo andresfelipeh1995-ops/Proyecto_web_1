@@ -1,7 +1,9 @@
 package entorno.com.cinema.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name="Peliculas")
 public class Pelicula {
