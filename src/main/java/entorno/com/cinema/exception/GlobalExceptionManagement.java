@@ -1,0 +1,37 @@
+package entorno.com.cinema.exception;
+import entorno.com.cinema.exception.NoEncontradoException;
+import org.springframework.http.HttpStatus; 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.ErrorResponse;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.time.LocalDateTime;
+
+@RestControllerAdvice
+public class GlobalExceptionManagement {
+
+    //errores de validacion
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String, String>> manejarValidaciones(MethodArgumentNotValidException ex) {
+        Map<String, String> errores = new HashMap<>();
+        ex.getBindingResult().getFieldErrors().forEach(error -> {
+            String campo = error.getField(); //atributo
+            String mensaje = error.getDefaultMessage(); //text mensaje de error
+            errores.put(campo,mensaje);
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errores);
+    }
+
+    //errores de negocio
+    @ExceptionHandler(NoEncontradoException.class)
+    public ResponseEntity<Map<String, String>> manejarEstudianteNoEncontrado(NoEncontradoException ex) {
+        Map<String, String> respuesta = new HashMap<>();
+        respuesta.put("error", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(respuesta);
+    }
+
+}
